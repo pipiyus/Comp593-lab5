@@ -50,7 +50,7 @@ def get_paste_data(pokemon_info):
     search_term =pokemon_info['search_term'].capitalize()
     title = f'Here are the pokemon info {search_term}s'
     
-    # Build the paste body text
+    # Build the paste body textS
     body_text = ''
     for info in pokemon_info['results']:
         body_text += info['info'] + '\n\n'

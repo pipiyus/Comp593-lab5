@@ -32,7 +32,10 @@ def get_search_term():
         return sys.argv[1]
     else:
         print('Error: Search term not provided.')
-        sys.exit('Script execution aborted')
+        new_func()
+
+def new_func():
+    sys.exit('Script execution aborted')
 
 def get_paste_data(jokes_dict):
     """Builds the title and body text for a PasteBin paste that contains some hilarious dad jokes.
