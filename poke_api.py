@@ -2,6 +2,7 @@
 Library for interacting with the PokeAPI.
 https://pokeapi.co/
 '''
+from urllib import response
 import requests
 
 POKE_API_URL = 'https://pokeapi.co/api/v2/pokemon/'
@@ -21,11 +22,15 @@ def get_pokemon_info(pokemon_name):
     Returns:
         dict: Dictionary of Pokemon information, if successful. Otherwise None.
     """
-    # TODO: Clean the Pokemon name parameter
+    headers = {"Accept": "text/plain"}
 
-    # TODO: Build a clean URL and use it to send a GET request
+    print("Getting pokemon info...", end="")
+    resp = requests.get(POKE_API_URL, headers=headers)
 
     # TODO: If the GET request was successful, convert the JSON-formatted message body text to a dictionary and return it
+    if response.status_code == requests.codes.ok:
+        print(" Success!")
+    return resp.text
 
     # TODO: If the GET request failed, print the error reason and return None
 
